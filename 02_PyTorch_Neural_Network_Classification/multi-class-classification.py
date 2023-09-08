@@ -54,9 +54,9 @@ class BlobModel(nn.Module):
         super().__init__()
         self.linear_layer_stack = nn.Sequential(
             nn.Linear(in_features=input_features, out_features=hidden_units),
-            # nn.ReLU(), # <- does our dataset require non-linear layers? (try uncommenting and see if the results change)
+            nn.ReLU(), # <- does our dataset require non-linear layers? (try uncommenting and see if the results change)
             nn.Linear(in_features=hidden_units, out_features=hidden_units),
-            # nn.ReLU(), # <- does our dataset require non-linear layers? (try uncommenting and see if the results change)
+            nn.ReLU(), # <- does our dataset require non-linear layers? (try uncommenting and see if the results change)
             nn.Linear(in_features=hidden_units, out_features=output_features), # how many classes are there?
         )
     
